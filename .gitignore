@@ -1,0 +1,7 @@
+/.idea
+/build
+/dist
+*.csv
+*.txt
+*.spec
+*.zip
