@@ -27,7 +27,7 @@ def find(file, plist):
 def shsfind(file, plist):
     for row in file:
         if str(plist) == row[3]:
-            output.append(row[3]+ row[4]+ '.....' + '**'+row[6]+'**  ')
+            output.append(row[3]+ row[4].split(",")[2] + '.....' + '**'+row[6]+'**  ')
             data.seek(0)
             return
 
