@@ -5,3 +5,5 @@
 *.txt
 *.spec
 *.zip
+*.pyc
+*.html
