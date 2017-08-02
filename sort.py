@@ -4,6 +4,7 @@
 from parts import *
 import csv
 import sys
+import markdown
 
 
 
@@ -16,7 +17,7 @@ output = []
 def find(file, plist):
     for row in file:
         if str(plist) == row[3]:
-            output.append(row[3] + row[4].split(",")[2]+ '.....' + '**'+row[6]+'**  ')
+            output.append(row[3] + row[4].split(",")[2]+ '..........' + '**'+row[6]+'**  ')
             data.seek(0)
             return
 
@@ -27,7 +28,7 @@ def find(file, plist):
 def shsfind(file, plist):
     for row in file:
         if str(plist) == row[3]:
-            output.append(row[3]+ row[4].split(",")[2] + '.....' + '**'+row[6]+'**  ')
+            output.append(row[3]+ row[4].split(",")[2] + '.........' + '**'+row[6]+'**  ')
             data.seek(0)
             return
 
@@ -136,6 +137,8 @@ for item in SWMR:
 
 
 outfile = open(sys.argv[2], 'w')
+
+
 
 for lines in output:
     outfile.write("%s\n" % str(lines))
