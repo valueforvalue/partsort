@@ -5,6 +5,7 @@ from parts import *
 import csv
 import sys
 import markdown
+import os
 
 
 
@@ -24,124 +25,66 @@ def find(file, plist):
     data.seek(0)
 
 
-
-def shsfind(file, plist):
-    for row in file:
-        if str(plist) == row[3]:
-            output.append(row[3]+ row[4].split(",")[2] + '.........' + '**'+row[6]+'**  ')
-            data.seek(0)
-            return
+def go(partslist, stext):
+    output.append('\n')  # newline
+    output.append(stext)
+    data.seek(0)
+    for item in partslist:
+        find(csv_file, item)
 
     data.seek(0)
-#.split(",")[1]
 
 csv_file.next() #print sub
 van = csv_file.next()
 
 output.append('#'+ van[5])
-output.append('\n')
-output.append('##RECIEVERS')
 
-for reciever in RECIEVERS:
-    find(csv_file, reciever)
+go(RECIEVERS, '##RECIEVERS')
 
-output.append('\n')#newline
-output.append("##DISHNET")
-data.seek(0)
+go(DISHNET, '##DISHNET')
 
-for dish in DISHNET:
-    find(csv_file, dish)
+go(LNBFS,"##LNBFS/SWITCHES")
 
+go(CONN, "##CONNECTIVITY")
 
-output.append('\n')#newline
-output.append("##LNBFS/SWITCHES")
-data.seek(0)
+go(XIP, "##XIP COMPONENTS")
 
-for lnbf in LNBFS:
-    find(csv_file, lnbf)
+go(HXIP, "##HYBRID XIP COMPONENTS")
 
+go(REMOTES, "##REMOTES")
 
-output.append('\n')#newline
-output.append("##CONNECTIVITY")
-data.seek(0)
+go(OTA, "##OTA")
 
-for item in CONN:
-    find(csv_file, item)
+go(SHS, "##SHS")
+
+go(MOUNTS, "##MOUNTS")
+
+go(DNMETALS, "##DISHNET METALS")
+
+go(BRP, "##BRP")
+
+go(SWMR, "##SWMR")
 
 
-output.append('\n')#newline
-output.append("##XIP COMPONENTS")
-data.seek(0)
-
-for item in XIP:
-    find(csv_file, item)
-
-output.append('\n')#newline
-output.append("##HYBRID XIP COMPONENTS")
-data.seek(0)
-
-for item in HXIP:
-    find(csv_file, item)
-
-output.append('\n')#newline
-output.append("##REMOTES")
-data.seek(0)
-
-for remote in REMOTES:
-    find(csv_file, remote)
-
-output.append('\n')#newline
-output.append("##OTA")
-data.seek(0)
-
-for item in OTA:
-    find(csv_file, item)
-
-output.append('\n')#newline
-output.append("##SHS")
-data.seek(0)
-
-for item in SHS:
-    shsfind(csv_file, item)
-
-
-output.append('\n')#newline
-output.append("##MOUNTS")
-data.seek(0)
-
-for item in MOUNTS:
-    find(csv_file, item)
-
-output.append('\n')#newline
-output.append("##DISHNET METALS")
-data.seek(0)
-
-for item in DNMETALS:
-    find(csv_file, item)
-
-
-
-output.append('\n')#newline
-output.append("##BRP")
-data.seek(0)
-
-for item in BRP:
-    find(csv_file, item)
-
-output.append('\n')#newline
-output.append("##SWMR")
-data.seek(0)
-
-for item in SWMR:
-    find(csv_file, item)
-
-
-outfile = open(sys.argv[2], 'w')
+outfile = open('out.tmp', 'w')
 
 
 
 for lines in output:
     outfile.write("%s\n" % str(lines))
+
+outfile.close()
+
+with open('out.tmp', 'rb') as f:
+    txt = f.read()
+    html = markdown.markdown(txt)
+
+with open(sys.argv[1][:-3] + 'html', 'wb') as o:
+    o.write(html)
+
+
+os.remove('out.tmp')
+
 
 
 
