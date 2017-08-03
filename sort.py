@@ -18,7 +18,7 @@ output = []
 def find(file, plist):
     for row in file:
         if str(plist) == row[3]:
-            output.append(row[3] + row[4].split(",")[2]+ '..........' + '**'+row[6]+'**  ')
+            output.append('**' + row[3] + '**' + row[4].split(",")[2] + '..........' + '**'+row[6]+'**  ')
             data.seek(0)
             return
 
@@ -66,14 +66,9 @@ go(BRP, "##BRP")
 go(SWMR, "##SWMR")
 
 
-outfile = open('out.tmp', 'w')
-
-
-
-for lines in output:
-    outfile.write("%s\n" % str(lines))
-
-outfile.close()
+with open('out.tmp', 'w') as of:
+    for lines in output:
+        of.write("%s\n" % str(lines))
 
 with open('out.tmp', 'rb') as f:
     txt = f.read()
