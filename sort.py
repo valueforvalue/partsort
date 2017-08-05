@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 
 from parts import *
@@ -9,7 +9,7 @@ import os
 
 
 
-data = open(sys.argv[1], "rb")
+data = open(sys.argv[1], "r")
 csv_file = csv.reader(data, delimiter=",")
 
 output = []
@@ -53,8 +53,8 @@ def go(partslist, stext):
 
     data.seek(0)
 
-csv_file.next() #print sub
-van = csv_file.next()
+next(csv_file)
+van = next(csv_file)
 
 output.append('#'+ van[0])
 
@@ -89,11 +89,11 @@ with open('out.tmp', 'w') as of:
     for lines in output:
         of.write("%s\n" % str(lines))
 
-with open('out.tmp', 'rb') as f:
+with open('out.tmp', 'r') as f:
     txt = f.read()
     html = markdown.markdown(txt)
 
-with open(sys.argv[1][:-3] + 'html', 'wb') as o:
+with open(sys.argv[1][:-3] + 'html', 'w') as o:
     o.write(html)
 
 
