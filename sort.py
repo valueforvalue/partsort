@@ -17,7 +17,7 @@ for filename in files:
     
     output = []
     
-    def find(file, plist):
+    def find(file, plist):# Find and reorder parts 
         for row in file:
             if str(plist) == row[1]:
                 output.append('**' + row[1] + '**' + parse(row[3]) + '..........' + '**'+row[2]+'**  ')
@@ -27,7 +27,7 @@ for filename in files:
         data.seek(0)
 
     
-    def parse(query):
+    def parse(query):#Pick Description text to avoid crashes.
         
         querywords = query.strip().split(',')
         resultwords = [word for word in querywords if word.strip() in YESWORDS]
@@ -35,7 +35,7 @@ for filename in files:
         return result
     
     
-    def go(partslist, stext):
+    def go(partslist, stext):# Setup headers and reset data pointer
         output.append('\n')  # newline
         output.append(stext)
         data.seek(0)
@@ -78,15 +78,15 @@ for filename in files:
     go(ISSUEOFF, "##ISSUE OFF")
     
     
-    with open('out.tmp', 'w') as of:
+    with open('out.tmp', 'w') as of: #Write temp file
         for lines in output:
             of.write("%s\n" % str(lines))
     
-    with open('out.tmp', 'r') as f:
+    with open('out.tmp', 'r') as f:#Read temp file for markdown
         txt = f.read()
         html = markdown.markdown(txt)
     
-    with open(filename[:-3] + 'html', 'w') as o:
+    with open(filename[:-3] + 'html', 'w') as o:#Write markdown html
         o.write(html)
     
     
