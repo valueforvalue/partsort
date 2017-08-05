@@ -6,6 +6,7 @@ import csv
 import sys
 import markdown
 import os
+import datetime
 import glob
 
 files = glob.glob('*.csv')
@@ -24,7 +25,7 @@ for filename in files:
                 return
     
         data.seek(0)
-    #row[3].split(",")[-1]
+
     
     def parse(query):
         
@@ -46,7 +47,7 @@ for filename in files:
     next(csv_file)
     van = next(csv_file)
     
-    output.append('#'+ van[0])
+    output.append('#'+ van[0] + ' *' + str(datetime.date.today()) + '*')
     
     go(RECIEVERS, '##RECIEVERS')
     
@@ -71,8 +72,10 @@ for filename in files:
     go(DNMETALS, "##DISHNET METALS")
     
     go(BRP, "##BRP")
-    
+
     go(SWMR, "##SWMR")
+    
+    go(ISSUEOFF, "##ISSUE OFF")
     
     
     with open('out.tmp', 'w') as of:
