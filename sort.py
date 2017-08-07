@@ -9,6 +9,10 @@ import os
 import datetime
 import glob
 
+with open('lib\items.dat', mode='r') as infile:
+    reader = csv.reader(infile)
+    items_list = {rows[0]:rows[1] for rows in reader}
+        
 files = glob.glob('*.csv')
 
 for filename in files:
@@ -20,19 +24,15 @@ for filename in files:
     def find(file, plist):# Find and reorder parts 
         for row in file:
             if str(plist) == row[1]:
-                output.append('**' + row[1] + '**' + parse(row[3]) + '..........' + '**'+row[2]+'**  ')
+                output.append('**' + row[1] + '**' + parse(row[1]) + '..........' + '**'+row[2]+'**  ')
                 data.seek(0)
                 return
     
         data.seek(0)
 
     
-    def parse(query):#Pick Description text to avoid crashes.
-        
-        querywords = query.strip().split(',')
-        resultwords = [word for word in querywords if word.strip() in YESWORDS]
-        result = ' '.join(resultwords)
-        return result
+    def parse(itemid):
+        return items_list[itemid.strip()]   
     
     
     def go(partslist, stext):# Setup headers and reset data pointer
