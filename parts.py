@@ -58,3 +58,27 @@ YESWORDS = ['VIP211Z', 'VIP222K', 'VIP622', 'VIP612', 'VIP722K', 'HOPPER WITH SL
             'LARGE', 'SHOE COVER', 'RF MODULATOR', 'PITCH', 'PATCH', 'DUST', 'MASK', '90 DEGREE SWEEP', 'ELECTRICAL', 'TAPE',
             'TRIPLEXER', '5/16" X 3"', '5/16" X 2"', 'LAG', 'SHIELD', 'MOUNT PLATE', 'SINGLE-GANG', 'GROUND', 'WIRE', 'WASP AND HORNET', 'SPRAY',
             'RG-6 COAXIAL (COPPER CLAD STEEL CENTER CONDUCTOR)', 'W/GND', 'MESS', 'DUAL MESS', 'BURIAL' 'ORANGE', 'SOLID COPPER CENTER',]
+			
+			
+skeleton = """ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Van Sub List</title>
+  <style type="text/css">
+   p {
+    line-height: 1.8;
+	}
+	em {
+	color: red;
+	font-weight: bold;
+	}
+	body {
+	padding-left: 20px
+	}
+  </style>
+  </head>
+  <body>
+  $markdown
+  </body>
+</html>"""

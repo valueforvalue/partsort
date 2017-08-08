@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-
+from string import Template
 from parts import *
 import csv
 import sys
@@ -24,7 +24,7 @@ for filename in files:
     def find(file, plist):# Find and reorder parts 
         for row in file:
             if str(plist) == row[1]:
-                output.append('**' + row[1] + '**' + parse(row[1]) + '..........' + '**'+row[2]+'**  ')
+                output.append('**' + row[1] + '**' + parse(row[1]) + '..........' + '*'+row[2]+'*  ')
                 data.seek(0)
                 return
     
@@ -47,7 +47,7 @@ for filename in files:
     next(csv_file)
     van = next(csv_file)
     
-    output.append('#'+ van[0] + ' *' + str(datetime.date.today()) + '*')
+    output.append('#'+ van[0] + ' ' + str(datetime.date.today()))
     
     go(RECIEVERS, '##RECEIVERS')
     
@@ -84,10 +84,16 @@ for filename in files:
     
     with open('out.tmp', 'r') as f:#Read temp file for markdown
         txt = f.read()
-        html = markdown.markdown(txt)
+        md_html = markdown.markdown(txt)
+    
+    html_template = Template(skeleton)
+    
+    complete_html = html_template.substitute(markdown=md_html)
+    
+    
     
     with open(filename[:-3] + 'html', 'w') as o:#Write markdown html
-        o.write(html)
+        o.write(complete_html)
     
     
     os.remove('out.tmp')
