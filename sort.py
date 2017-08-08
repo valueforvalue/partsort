@@ -49,7 +49,7 @@ for filename in files:
     
     output.append('#'+ van[0] + ' *' + str(datetime.date.today()) + '*')
     
-    go(RECIEVERS, '##RECIEVERS')
+    go(RECIEVERS, '##RECEIVERS')
     
     go(DISHNET, '##DISHNET')
     
