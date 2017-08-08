@@ -9,6 +9,8 @@ import os
 import datetime
 import glob
 
+print('Working........')
+
 with open('lib\items.dat', mode='r') as infile:
     reader = csv.reader(infile)
     items_list = {rows[0]:rows[1] for rows in reader}
@@ -97,6 +99,7 @@ for filename in files:
     
     
     os.remove('out.tmp')
+    print('Complete.')
 
 
 
