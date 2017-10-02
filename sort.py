@@ -105,6 +105,7 @@ for filename in files:
     os.remove('out.tmp')
     
 print("Complete, if anything is ever really complete, which I doubt.")
+time.sleep(3)
 
 
 
