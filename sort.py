@@ -2,14 +2,18 @@
 
 from string import Template
 from parts import *
+from fun import *
 import csv
 import sys
 import markdown
 import os
 import datetime
 import glob
+import time
+import random
 
-print('Working........')
+print(random.choice(PHRASE) + "\n")
+time.sleep(3)
 
 with open('items.dat', mode='r') as infile:
     reader = csv.reader(infile)
@@ -100,7 +104,7 @@ for filename in files:
     
     os.remove('out.tmp')
     
-print('Complete.')
+print("Complete, if anything is ever really complete, which I doubt.")
 
 
 
