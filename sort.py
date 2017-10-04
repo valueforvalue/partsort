@@ -12,7 +12,8 @@ import glob
 import time
 import random
 
-print(random.choice(PHRASE) + "\n")
+print(LOGO)
+print("\n" + random.choice(PHRASE) + "\n")
 time.sleep(3)
 
 with open('items.dat', mode='r') as infile:

@@ -9,5 +9,17 @@ PHRASE = ["I bet this iventory is inaccurate.", "Ever wonder what I'm actually d
 "Why?", "You have the ability to make the right decision.", "Whatever that looks like.", "You have two jobs.", "Why would an ISP...", "405-444-4011 --call for a good time",
 "Why did I choose the red pill?!?!", "I have no memory of this place.", "I honestly don't remember.", "I lied!", "Internal Stuff Person", "Choppers",
 "All the techs will come in at the same time today.", "I hope the internet doesn't go down.", "What if the power goes out?", "I bet you thought you were ahead today.",
-"No", "A tech needs what?", "How many times do you think you'll be interrupted today?", "Those vans won't count themselves.", "CPAW", "S-A-F-E-T-Y.....Dance",
-"You need a mobileye for your keyboard!"]
+"No", "A tech needs what?", "How many times do you think you'll be interrupted today?", "Those vans won't count themselves.", "Can People Always Work", "S-A-F-E-T-Y.....Dance",
+"You need a mobileye for your keyboard!", "You should just go hug a tree!", "I bet the next cycle count will be 37 pages.", "You'll just transfer this back later.",
+"How many times will you print the shipping report today?", "I failed!", "Because I'm a slacker!", "It's not that I'm lazy, it's that I just don't care.",
+"Do It Some How", "I need you to squeeze 60 hours of work into 40 hours.", "Make the warehouse great again!", "There should be no source code errors, ever!",
+"You just need to spend an hour a day doing that.", ]
+
+LOGO = """:'######:::'#######::'########::'########:
+'##... ##:'##.... ##: ##.... ##:... ##..::
+ ##:::..:: ##:::: ##: ##:::: ##:::: ##::::
+. ######:: ##:::: ##: ########::::: ##::::
+:..... ##: ##:::: ##: ##.. ##:::::: ##::::
+'##::: ##: ##:::: ##: ##::. ##::::: ##::::
+. ######::. #######:: ##:::. ##:::: ##::::
+:......::::.......:::..:::::..:::::..:::::"""
