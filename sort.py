@@ -13,6 +13,7 @@ import time
 import random
 
 print(LOGO)
+random.shuffle(PHRASE)
 print("\n" + random.choice(PHRASE) + "\n")
 time.sleep(3)
 

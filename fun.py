@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 
-PHRASE = ["I bet this iventory is inaccurate.", "Ever wonder what I'm actually doing with this data?", "They'll email you later with revisions!",
+PHRASE = ["I bet this inventory is inaccurate.", "Ever wonder what I'm actually doing with this data?", "They'll email you later with revisions!",
 "You know this guy will miss a whole job in OFSC today.", "How many of these items will you find homes for today?", "What's a part number?", 
 "I put that into OFSC, I'm sure of it!", "Warehouse let me run out, again.", "Sure if you can talk them into giving me non-prod.",
 "Oh you needed the serial number for that?", "I thought that came off my inventory automatically!", "What's a count?", "I had one, sold it, ya'll never sent me another!",
@@ -13,7 +13,8 @@ PHRASE = ["I bet this iventory is inaccurate.", "Ever wonder what I'm actually d
 "You need a mobileye for your keyboard!", "You should just go hug a tree!", "I bet the next cycle count will be 37 pages.", "You'll just transfer this back later.",
 "How many times will you print the shipping report today?", "I failed!", "Because I'm a slacker!", "It's not that I'm lazy, it's that I just don't care.",
 "Do It Some How", "I need you to squeeze 60 hours of work into 40 hours.", "Make the warehouse great again!", "There should be no source code errors, ever!",
-"You just need to spend an hour a day doing that.", ]
+"You just need to spend an hour a day doing that.", "I am the loop!", "Anybody in the Ardmore area have inventory? I can't seem to find mine.", "If only I could count!",
+"Extra Time Killed", "Dumb Numbers"]
 
 LOGO = """:'######:::'#######::'########::'########:
 '##... ##:'##.... ##: ##.... ##:... ##..::
