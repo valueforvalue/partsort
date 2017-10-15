@@ -107,6 +107,9 @@ for filename in files:
     os.remove('out.tmp')
     
 print("Complete, if anything is ever really complete, which I doubt.")
+print('\n')
+print('\n')
+print("Version 0.3.9 'Jovial Joey 1'")
 time.sleep(3)
 
 
