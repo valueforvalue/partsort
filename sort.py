@@ -109,7 +109,7 @@ for filename in files:
 print("Complete, if anything is ever really complete, which I doubt.")
 print('\n')
 print('\n')
-print("Version 0.4.0 'Jenn's Back Edition'")
+print("Version 0.4.1 Return to Rivendell Edition")
 time.sleep(3)
 
 
