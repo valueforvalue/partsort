@@ -106,10 +106,10 @@ for filename in files:
     
     os.remove('out.tmp')
     
-print("Complete, if anything is ever really complete, which I doubt.")
+print("So much fun!!!")
 print('\n')
 print('\n')
-print("Version 0.4.1 Return to Rivendell Edition")
+print("Version 0.4.2 Simpler Edition")
 time.sleep(3)
 
 

@@ -19,7 +19,7 @@ PHRASE = ["I bet this inventory is inaccurate.", "Ever wonder what I'm actually 
 "The force is strong with this one.", "What the hell is a weeping angel?!?", "If you're bored you could always get RAs.", "There is no way my luck is this bad!",
 "Dr Who?", "Don't sass me!", "Do you know what a duvet is?", "This is my BOOM STICK!", "Certainly illustrates the diversity of the word.",
 "I'll have a Coke then.", "I feel pretty, oh so pretty!", "Where you goin? Nowhere!", "Do what I do. Hold tight and pretend it's a plan!", "Tea, Earl Gray, Hot.",
-"Make it so number one.", "Goldberry is waiting.", "My precious!", "Jenn's Back!"]
+"Make it so number one.", "Goldberry is waiting.", "My precious!", "Jenn's Back!", "Out Of Order!"]
 
 LOGO = """:'######:::'#######::'########::'########:'########:
 '##... ##:'##.... ##: ##.... ##:... ##..:: ##.....::
