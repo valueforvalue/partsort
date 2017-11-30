@@ -21,11 +21,11 @@ with open('items.dat', mode='r') as infile:
     reader = csv.reader(infile)
     items_list = {rows[0]:rows[1] for rows in reader}
         
-files = glob.glob('*.csv')
+files = glob.glob('*.tsv')
 
 for filename in files:
     data = open(filename, "r")
-    csv_file = csv.reader(data, delimiter=",")
+    csv_file = csv.reader(data, delimiter="\t")
     
     output = []
     
